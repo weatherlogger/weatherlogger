@@ -132,3 +132,59 @@ saveCsvButton.addEventListener('click', () => {
     link.click();
     document.body.removeChild(link);
 });
+
+
+
+  
+document.getElementById('saveButton').addEventListener('click', function() {
+    saveData();
+  });
+  
+  document.getElementById('downloadButton').addEventListener('click', function() {
+    downloadCSV();
+  });
+  
+  function saveData() {
+    // Get form values
+    const date = document.getElementById('datearea').value;
+    const time = document.getElementById('timearea').value;
+    const speed = document.getElementById('speed').value;
+    const direction = document.getElementById('direction').value;
+
+    const weatherData = {
+        date: date,
+        time: time,
+        speed: speed,
+        direction: direction
+    };
+
+    csvContent.push(weatherData);
+    // Simulate saving (you can implement actual saving logic here)
+    console.log('Data saved:', csvContent);
+    // Clear form fields after saving
+    document.getElementById('dataForm').reset();
+  }
+  
+  function downloadCSV() {
+
+    const csvData = [
+        ['Date', 'Time', 'Speed', 'Direction'],
+        ...csvContent.map(entry => [
+            entry.date,
+            entry.time,
+            entry.speed,
+            entry.direction
+        ])
+    ];
+
+    const save = 'data:text/csv;charset=utf-8,' + csvData.map(e => e.join(',')).join('\n');
+    const encodedUri = encodeURI(save);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', 'data.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+  
+  

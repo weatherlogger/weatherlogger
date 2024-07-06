@@ -66,6 +66,36 @@
     
     <br>
     <!-- <p style="color:white;margin-left: 40%;">Made By Bilal</p> -->
+    <div class="containers">
+        <div class="h1">
+            <h1>Remote Area Form</h1>
+        </div>
+        <form id="dataForm">
+            <label for="date">Date:</label>
+            <input type="date" id="datearea" name="date" required><br><br>
+            
+            <label for="time">Time:</label>
+            <input type="time" id="timearea" name="time" required><br><br>
+            
+            <label for="speed">Speed (km/h):</label>
+            <input type="number" id="speed" name="speed" required><br><br>
+            
+            <label for="direction">Direction:</label>
+            <select id="direction" name="direction" required>
+              <option value="">Select Direction</option>
+              <option value="North">North</option>
+              <option value="South">South</option>
+              <option value="East">East</option>
+              <option value="West">West</option>
+            </select><br><br>
+            
+            <div class="button-container">
+                <button type="button" id="saveButton">Save</button>
+                <button type="button" id="downloadButton">Download</button>
+              </div>
+          </form>
+    </div>
+
     </div>
     <script src="script.js"></script>
 </body>

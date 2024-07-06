@@ -30,6 +30,7 @@ body {
     transition: height .6s ease;
     margin-left: 29px;
 
+
 }
 .search-box{
     position: relative;
@@ -183,17 +184,33 @@ color: #fff;
     font-weight: 500;
     margin-top: 12px ;
 }
+
 .h1{
     margin-bottom: 70px;
     color: #fff;
+
 }
 .h1 span {
     color: #ff2963;
 }
 
+.date-time {
+ color: white;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ margin-left: 34px;
+ margin-right: 34px;
+}
 
-
-
-
-
+#save-csv{
+    position: absolute;
+    bottom: 80%;
+    left: 40%;
+    color: white;
+    background: #bb0771;
+    padding: 4px;
+    border-radius: 10px;
+    border: 0px solid;
+}
 

@@ -28,6 +28,7 @@ body {
     padding: 20px;
     color: #fff;
     transition: height .6s ease;
+    margin-left: 29px;
 
 }
 .search-box{
@@ -182,6 +183,15 @@ color: #fff;
     font-weight: 500;
     margin-top: 12px ;
 }
+.h1{
+    margin-bottom: 70px;
+    color: #fff;
+
+}
+.h1 span {
+    color: #ff2963;
+}
+
 
 
 

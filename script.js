@@ -7,8 +7,12 @@ const cityInput = document.querySelector('.search-box input');
 const saveCsvButton = document.getElementById('save-csv');
 
 const APIKey = '7d402635234b6496bdfeae4fd9a60f36';
+const lon = 67.0822;
+const lat = 24.9056;
 
 let weatherDataEntries = [];
+
+let csvContent = [];
 
 function fetchWeather(city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
@@ -100,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(cityInput.value !== ''){
             fetchWeather(cityInput.value);
         }
-    }, 600000);
+    }, 15 * 60 * 1000);
 });
 
 
@@ -135,7 +139,6 @@ saveCsvButton.addEventListener('click', () => {
 
 
 
-  
 document.getElementById('saveButton').addEventListener('click', function() {
     saveData();
   });

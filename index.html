@@ -6,96 +6,121 @@
     <title>weather app</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
-<body>
+<body id="Weatherinfo">
     <div>
 
-    <div class="h1">
-        <h1>AI Weather Logging <span>System</span></h1>
-    </div>
-    <div class="date-time">
-        <p id="date"></p>
-        <p id="time"></p>
-    </div>
-    <div class="container">
-        <div class="search-box">
-            <i class="bx bxs-map"></i>
-            <input type="text" placeholder="enter the location">
-            <button class="bx bx-search"></button>
-        </div>
-        <div class="weather-box">
-            <div class="box">
-                <div class="info-weather">
-                    <div class="weather">
-                        <img src="cloud.png" alt="">
-                        <p class="temperature">0 <span>°C</span></p>
-                        <p class="description">Broken Clouds</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="weather-detail">
-            <div class="humidity">
-                <i class='bx bx-water'></i>
-                <div class="text">
-                    <div class="info-humidity">
-                        <span>0%</span>
-                    </div>
-                    <p>humidity</p>
-                </div>
-            </div>
-            <div class="wind">
-                <i class='bx bx-wind' ></i>
-                <div class="text">
-                    <div class="info-wind">
-                        <span>0km/h</span>
-                    </div>
-                    <p>wind Speed</p>
-                </div>
-            </div>
-        </div>
-        <div class="not-found">
-            <div class="box">
-                <img src="404.png" >
-                <p>Oops! Location Not Found! </p>
-            </div>
-        </div>
-        <button id="save-csv">Download</button>
-    </div>
-    
-    <br>
-    <!-- <p style="color:white;margin-left: 40%;">Made By Bilal</p> -->
-    <div class="containers">
         <div class="h1">
-            <h1>Remote Area Form</h1>
+            <h1>AI Weather Logging <span>System</span></h1>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class='bx bx-menu'></i>
+            </button>
         </div>
-        <form id="dataForm">
-            <label for="date">Date:</label>
-            <input type="date" id="datearea" name="date" required><br><br>
-            
-            <label for="time">Time:</label>
-            <input type="time" id="timearea" name="time" required><br><br>
-            
-            <label for="speed">Speed (km/h):</label>
-            <input type="number" id="speed" name="speed" required><br><br>
-            
-            <label for="direction">Direction:</label>
-            <select id="direction" name="direction" required>
-              <option value="">Select Direction</option>
-              <option value="North">North</option>
-              <option value="South">South</option>
-              <option value="East">East</option>
-              <option value="West">West</option>
-            </select><br><br>
-            
-            <div class="button-container">
-                <button type="button" id="saveButton">Save</button>
-                <button type="button" id="downloadButton">Download</button>
-              </div>
-          </form>
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="#Weatherinfo"><i class='bx bx-cloud'></i> Weather Info</a></li>
+                <li><a href="#RemoteArea"><i class='bx bx-map'></i> Remote Area Form</a></li>
+                <li><a href="#Chart"><i class='bx bx-map'></i> Data Visualization</a></li>
+                <li><a href="#" id="downloadCsv"><i class='bx bx-download'></i> Download Data</a></li>
+        </div>
+        <div class="date-time">
+            <p id="date"></p>
+            <p id="time"></p>
+        </div>
+        <div class="container">
+            <div class="search-box">
+                <i class="bx bxs-map"></i>
+                <input type="text" placeholder="enter the location">
+                <button class="bx bx-search"></button>
+            </div>
+            <div class="weather-box">
+                <div class="box">
+                    <div class="info-weather">
+                        <div class="weather">
+                            <img src="cloud.png" alt="">
+                            <p class="temperature">0 <span>°C</span></p>
+                            <p class="description">Broken Clouds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-detail">
+                <div class="humidity">
+                    <i class='bx bx-water'></i>
+                    <div class="text">
+                        <div class="info-humidity">
+                            <span>0%</span>
+                        </div>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <i class='bx bx-wind' ></i>
+                    <div class="text">
+                        <div class="info-wind">
+                            <span>0km/h</span>
+                        </div>
+                        <p>wind Speed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="not-found">
+                <div class="box">
+                    <img src="404.png" >
+                    <p>Oops! Location Not Found! </p>
+                </div>
+            </div>
+            <button id="save-csv">Download</button>
+        </div>
+        
+        <br>
+        <span id="RemoteArea"></span>
+        <!-- <p style="color:white;margin-left: 40%;">Made By Bilal</p> -->
+        <div class="containers">
+            <div class="h1">
+                <h1>Remote Area Form</h1>
+            </div>
+            <form id="dataForm">
+                <label for="date">Date:</label>
+                <input type="date" id="datearea" name="date" required><br><br>
+                
+                <label for="time">Time:</label>
+                <input type="time" id="timearea" name="time" required><br><br>
+                
+                <label for="speed">Speed (km/h):</label>
+                <input type="number" id="speed" name="speed" required><br><br>
+                
+                <label for="direction">Direction:</label>
+                <select id="direction" name="direction" required>
+                <option value="">Select Direction</option>
+                <option value="North">North</option>
+                <option value="South">South</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+                </select><br><br>
+                
+                <div class="button-container">
+                    <button type="button" id="saveButton">Save</button>
+                    <button type="button" id="downloadButton">Download</button>
+                </div>
+            </form>
+        </div>
+        <div style="position: absolute;margin-top: 160px;margin-left: -160px;">
+            <div class="chart" id="Chart">
+                <canvas id="lineChart"></canvas>
+               </div>
+        </div>
     </div>
-</div>
+
+       
+
+
+
+
+
     <script src="script.js"></script>
+
 </body>
 </html>

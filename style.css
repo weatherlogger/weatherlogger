@@ -186,7 +186,8 @@ color: #fff;
 }
 
 .h1{
-    margin-bottom: 70px;
+    text-align: center;
+    margin-top: 20px;
     color: #fff;
 
 }
@@ -201,6 +202,7 @@ color: #fff;
  justify-content: space-between;
  margin-left: 34px;
  margin-right: 34px;
+ margin-top: 60px;
 }
 
 #save-csv{
@@ -259,3 +261,69 @@ form {
     display: flex;
     justify-content: space-between;
   }
+
+  .menu-toggle {
+    position: fixed;
+    right: 20px;
+    top: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #800080; /* Purple */
+    outline: none;
+    transition: color 0.3s ease;
+    background: #280533cc;
+}
+
+.menu-toggle:hover {
+    color: #6a0dad; /* Darker purple on hover */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    right: -250px; /* Hide the sidebar initially */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #800080; /* Purple color */
+    padding-top: 60px; /* Adjust top padding */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.sidebar li {
+    margin: 20px 0;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #dcdcdc; /* Light grey */
+}
+
+/* Active sidebar class */
+.sidebar.active {
+    right: 0; /* Slide in the sidebar */
+}
+
+.chart {
+    width: 800px;
+    height: 500px;   
+}

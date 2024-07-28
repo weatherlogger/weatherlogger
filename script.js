@@ -23,7 +23,7 @@ const lineChart = new Chart(ctx, {
     data: {
         labels: weatherChart.label,
         datasets: [{
-            label: 'Perivous 15 Day Weather',
+            label: 'Wind Speed',
             data:  weatherChart.data,
             fill: true,
             borderColor: 'rgb(75, 192, 192)',
@@ -38,7 +38,7 @@ const lineChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: 'Weather Logger Data Visualization'
+                text: 'Weather Logger Data Visualization for Perivous 15 Day Weather'
             }
         }
     }

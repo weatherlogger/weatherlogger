@@ -96,8 +96,9 @@ function fetchWeather(city) {
             wind.innerHTML = `${json.wind.speed} km/h`;
             const timestamp = json.dt * 1000; // Convert to milliseconds
             const date = new Date(timestamp);
+            const today = new Date();
             const dateString = date.toLocaleDateString();
-            const timeString = date.toLocaleTimeString();
+            const timeString = today.toLocaleTimeString();
 
             dateElement.innerText = `Date: ${dateString}`;
             timeElement.innerText = `Time: ${timeString}`;
@@ -116,7 +117,6 @@ function fetchWeather(city) {
             };
 
             weatherDataEntries.push(weatherData);
-            chartdata();
         });
 }
 
@@ -167,6 +167,7 @@ search.addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', () => {
     cityInput.value = 'Karachi'; // Set default value to "Karachi"
     fetchWeather('Karachi');
+    chartdata();
     setInterval(() => {
         if(cityInput.value !== ''){
             fetchWeather(cityInput.value);

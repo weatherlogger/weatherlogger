@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(cityInput.value !== ''){
             fetchWeather(cityInput.value);
         }
-    }, 5000);
+    }, 30000);
 });
 
 
